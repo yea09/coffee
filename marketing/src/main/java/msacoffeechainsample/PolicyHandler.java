@@ -20,6 +20,7 @@ public class PolicyHandler{
 
     }
 
+    /**
     @StreamListener(KafkaProcessor.INPUT)
     public void wheneverPayCompleted_PayComplete(@Payload PayCompleted payCompleted){
         if(payCompleted.isMe()){
@@ -32,5 +33,29 @@ public class PolicyHandler{
             System.out.println("##### listener PayComplete : " + payCompleted.toJson());
         }
     }
+    */
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverProduced_(@Payload Produced produced){
+
+        if(produced.isMe()){
+            System.out.println("##### listener  : " + produced.toJson());
+
+            Marketing marketing = new Marketing();
+
+            // Produced된 Order 가져오기
+            // Order order = orderRepository.findById(produced.getOrderId()).get();
+
+            marketing.setOrderId(payCompleted.getOrderId());
+            marketing.setPoint((double) 300000);
+            MarketingRepository.save(marketing);
+            
+
+
+        }
+    }
+    
+    
+    
+    
 }
