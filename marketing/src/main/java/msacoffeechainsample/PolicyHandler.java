@@ -46,7 +46,7 @@ public class PolicyHandler{
             // Produced된 Order 가져오기
             // Order order = orderRepository.findById(produced.getOrderId()).get();
 
-            marketing.setOrderId(produced.getOrderId());
+            marketing.setOrderId(Long.parseLong(produced.getOrderId()));
             marketing.setPoint((double) 300000);
             MarketingRepository.save(marketing);
             
