@@ -31,21 +31,24 @@ spring:
           destination: msacoffeechainsample
           contentType: application/json
 
-#feign:
-#  hystrix:
-#    enabled: true
-#
-#hystrix:
-#  command:
-#    default:
-#      execution.isolation.thread.timeoutInMilliseconds: 610
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
 
 logging:
   level:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 server:
-  port: 8086
+  port: 8085
+api:
+  stock:
+    url: http://localhost:8083
 ---
 
 spring:
@@ -71,12 +74,14 @@ spring:
         event-out:
           destination: msacoffeechainsample
           contentType: application/json
+feign:
+  hystrix:
+    enabled: true
 
-#feign:
-#  hystrix:
-#    enabled: true
-#
-#hystrix:
-#  command:
-#    default:
-#      execution.isolation.thread.timeoutInMilliseconds: 610
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 610
+api:
+  stock:
+    url: ${configurl}
