@@ -23,7 +23,7 @@ spring:
         - id: customercenter
           uri: http://localhost:8084
           predicates:
-            - Path= /mypages/**
+            - Path=/mypages/**
         - id: marketing
           uri: http://localhost:8085
           predicates:
@@ -62,11 +62,11 @@ spring:
         - id: customercenter
           uri: http://customercenter:8080
           predicates:
-            - Path= /mypages/**
+            - Path=/mypages/**
         - id: marketing
           uri: http://marketing:8080
           predicates:
-            - Path= /marketings/**
+            - Path=/marketings/**
       globalcors:
         corsConfigurations:
           '[/**]':
