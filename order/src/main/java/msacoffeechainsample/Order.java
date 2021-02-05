@@ -50,16 +50,15 @@ public class Order {
             // Aggregate 값을 Event 객체로 복사
             BeanUtils.copyProperties(this, orderCanceled);
 
-            msacoffeechainsample.external.Product product = new msacoffeechainsample.external.Product();
-            product.setId(orderCanceled.getProductId());
-            product.setOrderId(orderCanceled.getId());
-            product.setProductName(orderCanceled.getProductName());
-            product.setStatus(orderCanceled.getStatus());
-            product.setQty(orderCanceled.getQty());
+            msacoffeechainsample.external.Marketing marketing = new msacoffeechainsample.external.Marketing();
+            //marketing.setId(orderCanceled.getProductId());
+            marketing.setOrderId(orderCanceled.getProductId());
+            marketing.setProcess(orderCanceled.getStatus());
+            marketing.setPoint("0.0");
 
             // req/res
-            OrderApplication.applicationContext.getBean(msacoffeechainsample.external.ProductService.class)
-                    .cancel(product.getId(), product);
+            OrderApplication.applicationContext.getBean(msacoffeechainsample.external.MarketingService.class)
+                    .pointCancel(marketing);
         }
     }
 
