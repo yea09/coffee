@@ -2,7 +2,7 @@ package msacoffeechainsample;
 
 import javax.persistence.*;
 
-import msacoffeechainsample.external.Product;
+import msacoffeechainsample.external.Marketing;
 import org.springframework.beans.BeanUtils;
 import java.util.List;
 
