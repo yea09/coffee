@@ -3,7 +3,7 @@ package msacoffeechainsample.external;
 public class Marketing {
 
     private Long id;
-    private Long ordreId;
+    private Long orderId;
     private String process;
     private Double point;
 
@@ -13,11 +13,11 @@ public class Marketing {
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getOrdreId() {
-        return ordreId;
+    public Long getOrderId() {
+        return orderId;
     }
-    public void setOrdreId(Long ordreId) {
-        this.ordreId = ordreId;
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
     public String getProcess() {
         return process;
