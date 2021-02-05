@@ -52,7 +52,7 @@ public class Order {
 
             msacoffeechainsample.external.Marketing marketing = new msacoffeechainsample.external.Marketing();
             //marketing.setId(orderCanceled.getProductId());
-            marketing.setOrderId(orderCanceled.getProductId());
+            marketing.setOrderId(Long.parseLong(orderCanceled.getProductId()));
             marketing.setProcess(orderCanceled.getStatus());
             marketing.setPoint("0.0");
 
